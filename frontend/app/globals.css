@@ -1,14 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&display=swap');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-body { font-family: 'Epilogue', sans-serif; color: #202430; background: #fff; }
+@theme {
+  --color-primary: #4640DE;
+  --color-navy: #202430;
+  --color-gray-body: #515B6F;
+  --color-gray-sub: #7C8493;
+  --color-bg-light: #F8F8FD;
+  --color-border: #D6DDEB;
+  --font-family-sans: 'Epilogue', sans-serif;
+}
 
-@layer components {
-  .btn-primary  { @apply bg-primary text-white px-6 py-3 rounded font-semibold hover:bg-indigo-700 transition-colors; }
-  .btn-outline  { @apply border-2 border-primary text-primary px-6 py-3 rounded font-semibold hover:bg-primary hover:text-white transition-colors; }
-  .input-field  { @apply w-full border border-border rounded px-4 py-3 text-navy placeholder-gray-sub focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition text-sm; }
-  .section-title { @apply text-3xl sm:text-4xl font-bold text-navy; }
-  .section-title span { @apply text-primary; }
+
+
+body {
+  font-family: var(--font-family-sans);
+  color: #202430;
+  background: #fff;
 }
