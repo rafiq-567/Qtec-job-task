@@ -12,6 +12,6 @@ app.use(express.json());
 app.use('/api/jobs', jobRoutes);
 app.use('/api/applications', applicationRoutes);
 
-app.get('/', (req, res) => res.json({ message: 'QuickHire API is running' }));
+app.get('/', (req, res) => res.json({ message: 'QuickHire API is running ✅' }));
 
 module.exports = app;
