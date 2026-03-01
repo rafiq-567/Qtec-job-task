@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const { getAllJobs, getFeaturedJobs, getJobById, createJob, deleteJob } = require('../controllers/jobController');
+const { protect, adminOnly } = require('../middleware/auth');
 
-router.get('/featured', getFeaturedJobs); // must be before /:id
+router.get('/featured', getFeaturedJobs);
 router.get('/',         getAllJobs);
 router.get('/:id',      getJobById);
-router.post('/',        createJob);
-router.delete('/:id',   deleteJob);
+router.post('/',        protect, adminOnly, createJob);
+router.delete('/:id',   protect, adminOnly, deleteJob);
 
 module.exports = router;
